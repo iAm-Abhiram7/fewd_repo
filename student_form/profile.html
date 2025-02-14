@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .profile-container {
+            border: 1px solid black;
+            padding: 20px;
+            display: inline-block;
+            text-align: left;
+            border-radius: 10px;
+            background-color: #f8f9fa;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        img {
+            max-width: 150px;
+            display: block;
+            margin: 10px auto;
+            border-radius: 10px;
+            border: 2px solid black;
+        }
+
+        .back-btn {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="profile-container">
+        <h1 id="studentName">Student Name</h1>
+        <p><strong>Phone:</strong> <span id="studentPhone"></span></p>
+        <p><strong>Address:</strong> <span id="studentAddress"></span></p>
+        <h3>Profile Image</h3>
+        <img id="studentImage" src="" alt="Profile Image">
+        <br>
+        <button class="back-btn" onclick="goBack()">Go Back</button>
+    </div>
+
+    <script>
+        const students = [
+            { id: 1, name: "Suman", phone: "7894561203", address: "KDH, KHDHK 5000DM", image: "https://via.placeholder.com/150" },
+            { id: 2, name: "Babu", phone: "1234567890", address: "City, State 1234", image: "https://via.placeholder.com/150" }
+        ];
+
+        function getStudentIdFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get("id");
+        }
+
+        function loadStudentProfile() {
+            const studentId = getStudentIdFromURL();
+            const student = students.find(s => s.id == studentId);
+
+            if (student) {
+                document.getElementById("studentName").textContent = student.name;
+                document.getElementById("studentPhone").textContent = student.phone;
+                document.getElementById("studentAddress").textContent = student.address;
+                document.getElementById("studentImage").src = student.image;
+            } else {
+                document.body.innerHTML = "<h1>Student Not Found</h1>";
+            }
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        loadStudentProfile();
+    </script>
+
+</body>
+
+</html>
