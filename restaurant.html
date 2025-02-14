@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie's Delight</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        .carousel img { height: 400px; object-fit: cover; }
+        .menu-table th, .menu-table td { text-align: center; }
+        .navbar-brand { font-weight: bold; }
+    </style>
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Foodie's Delight</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carousel -->
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./american.jpg" class="d-block w-100" alt="American Cuisine">
+            </div>
+            <div class="carousel-item">
+                <img src="./indian.jpg" class="d-block w-100" alt="Indian Cuisine">
+            </div>
+            <div class="carousel-item">
+                <img src="./italian.jpg" class="d-block w-100" alt="Italian Cuisine">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- Menu Section -->
+    <div class="container mt-5" id="menu">
+        <h2 class="text-center mb-4">Our Menu</h2>
+        <table class="table table-bordered menu-table">
+            <thead class="table-dark">
+                <tr>
+                    <th>Dish</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Cheese Burger</td>
+                    <td>Grilled beef patty with cheese & fresh veggies</td>
+                    <td>999 rs</td>
+                </tr>
+                <tr>
+                    <td>Butter Chicken</td>
+                    <td>Creamy tomato-based curry with tender chicken</td>
+                    <td>1099 rs</td>
+                </tr>
+                <tr>
+                    <td>Vegetable Fried Rice</td>
+                    <td>Stir-fried rice with fresh veggies & soy sauce</td>
+                    <td>799 rs</td>
+                </tr>
+                <tr>
+                    <td>Margherita Pizza</td>
+                    <td>Classic pizza with mozzarella, tomato, and basil</td>
+                    <td>999 rs</td>
+                </tr>
+                <tr>
+                    <td>Chocolate Brownie</td>
+                    <td>Warm chocolate brownie with vanilla ice cream</td>
+                    <td>299 rs</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- FAQs Section -->
+    <div class="container mt-5" id="faq">
+        <h2 class="text-center mb-4">FAQs</h2>
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                        What are your opening hours?
+                    </button>
+                </h2>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">We are open from 10 AM to 10 PM daily.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">
+                        Do you offer home delivery?
+                    </button>
+                </h2>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">Yes! We offer delivery via UberEats and DoorDash.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="container mt-5 mb-5" id="contact">
+        <h2 class="text-center mb-4">Contact Us</h2>
+        <p class="text-center">Email: contact@foodiesdelight.com | Phone: +123 456 7890</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
