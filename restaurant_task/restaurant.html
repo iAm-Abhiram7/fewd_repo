@@ -28,6 +28,12 @@
             text-align: center;
         }
 
+        .table-hover:hover {
+            background-color: #93b2d1;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
         .navbar-brand {
             font-family: 'Dancing Script', cursive;
             font-size: 1.8rem;
@@ -37,27 +43,109 @@
         h2 {
             font-weight: 600;
         }
+        .menu-table th,
+        .menu-table td {
+            text-align: center;
+        }
+        .welcome-section {
+            text-align: center;
+            background: url('https://source.unsplash.com/1600x600/?restaurant,food') no-repeat center center/cover;
+            color: white;
+            padding: 80px 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+        .highlight-section {
+            text-align: center;
+            background-color: #ff9800;
+            color: white;
+            padding: 40px;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .menu-card {
+    border-radius: 10px;
+    background-color: rgb(255, 137, 137);
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    padding: 15px;
+    margin-bottom: 15px;
+    color: rgb(17, 16, 16);
+}
+
+/* Make sure the table and its rows match the menu-card */
+.menu-card .menu-table {
+    width: 100%;
+    background-color: rgb(255, 137, 137);  /* Match card background */
+    color: rgb(17, 16, 16); /* Match text color */
+    border-collapse: collapse; /* Remove gaps between cells */
+}
+
+.menu-card .menu-table th, 
+.menu-card .menu-table td {
+    background-color: rgb(255, 137, 137); /* Match card background */
+    padding: 10px;
+    text-align: left;
+    border: none; /* Remove default borders */
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    background-color: rgb(157, 0, 0);
+    color: rgb(250, 249, 249);
+}
+
+/* Make sure the table updates on hover */
+.menu-card:hover .menu-table,
+.menu-card:hover .menu-table th,
+.menu-card:hover .menu-table td {
+    background-color: rgb(157, 0, 0);
+    color: rgb(250, 249, 249);
+}
+
+/* Optional: Adjust header styling */
+.menu-table th {
+    font-weight: bold;
+}
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Foodie's Delight</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#faq">FAQs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <audio id="background-music" autoplay loop>
+        <source src="./zim.mp3" type="audio/mp3">
+    </audio>
 
-    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">Foodie's Delight</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <!-- Dropdown for Menu -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button">
+                        Menu
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+                        <li><a class="dropdown-item menu-link" href="#breakfast">Breakfast</a></li>
+                        <li><a class="dropdown-item menu-link" href="#lunch">Lunch</a></li>
+                        <li><a class="dropdown-item menu-link" href="#dinner">Dinner</a></li>
+                    </ul>
+
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#faq">FAQs</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    <!-- <div id="carouselExample" class="carousel slide" data-bs-ride="carousel"> -->
+     <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="./american.jpg" class="d-block w-100" alt="American Cuisine">
@@ -76,73 +164,131 @@
             <span class="carousel-control-next-icon"></span>
         </button>
     </div>
-
-    <!-- Menu Section -->
-    <div class="container mt-5" id="menu">
-        <h2 class="text-center mb-4">Our Menu</h2>
-        <table class="table table-bordered menu-table">
-            <thead class="table-dark">
-                <tr>
-                    <th>Dish</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Cheese Burger</td>
-                    <td>Grilled beef patty with cheese & fresh veggies</td>
-                    <td>999 rs</td>
-                </tr>
-                <tr>
-                    <td>Butter Chicken</td>
-                    <td>Creamy tomato-based curry with tender chicken</td>
-                    <td>1099 rs</td>
-                </tr>
-                <tr>
-                    <td>Vegetable Fried Rice</td>
-                    <td>Stir-fried rice with fresh veggies & soy sauce</td>
-                    <td>799 rs</td>
-                </tr>
-                <tr>
-                    <td>Margherita Pizza</td>
-                    <td>Classic pizza with mozzarella, tomato, and basil</td>
-                    <td>999 rs</td>
-                </tr>
-                <tr>
-                    <td>Chocolate Brownie</td>
-                    <td>Warm chocolate brownie with vanilla ice cream</td>
-                    <td>299 rs</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="container mt-5" id="faq">
-        <h2 class="text-center mb-4">FAQs</h2>
-        <div class="accordion" id="faqAccordion">
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                        What are your opening hours?
-                    </button>
-                </h2>
-                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">We are open from 10 AM to 10 PM daily.</div>
+    <div class="modal fade" id="couponModal" tabindex="-1" aria-labelledby="couponModalLabel"">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="couponModalLabel">Congratulations!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">
-                        Do you offer home delivery?
-                    </button>
-                </h2>
-                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">Yes! We offer delivery via UberEats and DoorDash.</div>
+                <div class="modal-body">
+                    🎉 You got a special discount coupon! Use code <strong>FOODIE10</strong> for 10% off your next order.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Got it!</button>
                 </div>
             </div>
         </div>
     </div>
+    <div class="container">
+        <div class="highlight-section">
+            🍕 Handpicked Ingredients, Authentic Recipes, and Love in Every Dish! 🌿<br>
+            Whether it's a refreshing breakfast, a satisfying lunch, or a delightful dinner, we promise an
+            unforgettable experience. 💖
+        </div>
+    </div>
+
+    <section id="menu" class="mb-5">
+        <h2 class="text-center">Our Menu</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="menu-card" id="breakfast">
+                    <h3>Breakfast</h3>
+                    <table class="table table-bordered menu-table">
+                        <thead>
+                            <tr>
+                                <th>Dish</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Pancakes</td>
+                                <td>499 rs</td>
+                            </tr>
+                            <tr>
+                                <td>Omelette</td>
+                                <td>399 rs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    
+            <div class="col-md-4">
+                <div class="menu-card" id="lunch">
+                    <h3>Lunch</h3>
+                    <table class="table table-bordered menu-table">
+                        <thead>
+                            <tr>
+                                <th>Dish</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Butter Chicken</td>
+                                <td>1099 rs</td>
+                            </tr>
+                            <tr>
+                                <td>Vegetable Fried Rice</td>
+                                <td>799 rs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    
+            <div class="col-md-4">
+                <div class="menu-card" id="dinner">
+                    <h3>Dinner</h3>
+                    <table class="table table-bordered menu-table">
+                        <thead>
+                            <tr>
+                                <th>Dish</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Margherita Pizza</td>
+                                <td>999 rs</td>
+                            </tr>
+                            <tr>
+                                <td>Chocolate Brownie</td>
+                                <td>299 rs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+<div class="container mt-5" id="faq">
+    <h2 class="text-center mb-4">FAQs</h2>
+    <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                    What are your opening hours?
+                </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">We are open from 10 AM to 10 PM daily.</div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">
+                    Do you offer home delivery?
+                </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">Yes! We offer delivery via UberEats and DoorDash.</div>
+            </div>
+        </div>
+    </div>
+</div>
 
     <div class="container mt-5 mb-5" id="contact">
         <h2 class="text-center mb-4">Contact Us</h2>
@@ -150,6 +296,55 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.onload = function () {
+            var myModal = new bootstrap.Modal(document.getElementById('couponModal'));
+            myModal.show();
+        };
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var menuDropdown = document.querySelector(".nav-item.dropdown");
+            menuDropdown.addEventListener("mouseenter", function () {
+                var dropdownMenu = this.querySelector(".dropdown-menu");
+                dropdownMenu.classList.add("show");
+            });
+
+            menuDropdown.addEventListener("mouseleave", function () {
+                var dropdownMenu = this.querySelector(".dropdown-menu");
+                dropdownMenu.classList.remove("show");
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let audio = document.getElementById("background-music");
+            let playMusic = () => {
+                audio.play().catch(error => {
+                    console.log("Autoplay blocked. User interaction required.");
+                });
+            };
+
+            playMusic();
+
+            document.addEventListener("click", () => {
+                if (audio.paused) {
+                    audio.play();
+                }
+            }, { once: true }); 
+        });
+    </script>
+
 </body>
 
 </html>
+
+<!-- hover -->
+<!-- autoscroll -->
+<!-- popup (copupon) -->
+<!-- menu lo submenu  -->
+<!-- music -->
+
+deploy on webserver
+run on port 9099
+use http://ohris.com

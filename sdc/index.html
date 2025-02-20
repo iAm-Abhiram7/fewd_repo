@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave Transition</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .dark-section {
+            background-color: #000000;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .text-section {
+            max-width: 500px;
+            text-align: left;
+        }
+
+        .highlight {
+            color: #2196F3;
+            font-size: 6rem;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .lead-text {
+            font-size: 2rem;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: #2196F3;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #1769aa;
+        }
+.custom-shape-divider-bottom-1739929831 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1739929831 svg {
+    position: relative;
+    display: block;
+    width: calc(120% + 1.3px);
+    height: 100px;
+}
+
+.custom-shape-divider-bottom-1739929831 .shape-fill {
+    fill: #FFFFFF;
+}
+
+.white-section {
+    background-color: white;
+    padding: 50px 0;
+    text-align: center;
+    color: black;
+    position: relative;
+    margin-top: -1px; /* Ensures no gap */
+    z-index: 1;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Dark Section -->
+    <div class="dark-section">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">SRC</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <div class="text-section">
+                <span class="highlight">W</span><span class="lead-text">e Collect High<br>Quality Leads</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula mauris vel justo tincidunt
+                    cursus.</p>
+                <button class="btn btn-primary" data-bs-toggle="tooltip" title="Get in touch with us!">Contact
+                    Us</button>
+            </div>
+            <div>
+                <img src="./giphy.gif" alt="GIF" class="img-fluid"
+                    width="350">
+            </div>
+        </section>
+
+        <!-- Custom Wave Divider -->
+        <div class="custom-shape-divider-bottom-1739929831">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path
+                    d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- White Section -->
+    <div class="white-section">
+        <h2>Welcome to the White Section</h2>
+        <p>This is a new section with a white background after the wave effect.</p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
+
+homepage
+host it using sandbox
