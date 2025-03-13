@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css'
-
+import Iloop from './ifLoopInside';
+import Oloop from './ifLoopOutside'
 function App() {
 
   return (
     <>
-      <h2>Hello world</h2>
+      <Iloop/>
+      <Oloop/>
     </>
   )
 }
